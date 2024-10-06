@@ -1,38 +1,113 @@
-body {
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
     padding: 20px;
+    height: 100vh;
 }
 
-.form-container {
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
-.form-step {
-    display: none;
+.sidebar nav ul {
+    list-style: none;
 }
 
-.form-step.active {
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
     display: block;
 }
 
-.error-message {
-    color: red;
-    font-size: 12px;
+.sidebar nav ul li a:hover {
+    background-color: #444;
+    padding-left: 10px;
+    transition: 0.3s;
 }
 
-button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#content {
+    padding: 20px;
+}
+
+.content-section {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar h2 {
+        font-size: 20px;
+    }
+
+    .sidebar nav ul li a {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    header {
+        font-size: 18px;
+    }
 }

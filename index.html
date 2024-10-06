@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Step Form</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="form-container">
-        <form id="multiStepForm">
-            <div class="form-step" id="step-1">
-                <h2>Step 1: User Information</h2>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <span class="error-message" id="email-error"></span>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" onclick="showContent('dashboard')">Dashboard</a></li>
+                    <li><a href="#users" onclick="showContent('users')">Users</a></li>
+                    <li><a href="#settings" onclick="showContent('settings')">Settings</a></li>
+                    <li><a href="#reports" onclick="showContent('reports')">Reports</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-                <span class="error-message" id="password-error"></span>
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header>
+                <h1>Admin Dashboard</h1>
+            </header>
 
-                <button type="button" class="next-btn">Next</button>
-            </div>
-
-            <div class="form-step" id="step-2">
-                <h2>Step 2: Personal Details</h2>
-                <label for="age">Age:</label>
-                <input type="number" id="age" required>
-                <span class="error-message" id="age-error"></span>
-
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" required>
-                <span class="error-message" id="name-error"></span>
-
-                <button type="button" class="prev-btn">Previous</button>
-                <button type="button" class="next-btn">Next</button>
-            </div>
-
-            <div class="form-step" id="step-3">
-                <h2>Step 3: Confirmation</h2>
-                <p>Please review your information:</p>
-                <div id="summary"></div>
-                <button type="button" class="prev-btn">Previous</button>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+            <!-- Dynamic Content -->
+            <section id="content">
+                <div id="dashboard" class="content-section">
+                    <h2>Welcome to the Dashboard</h2>
+                    <p>This is the main dashboard content.</p>
+                </div>
+                <div id="users" class="content-section" style="display:none;">
+                    <h2>User Management</h2>
+                    <p>Manage your users here.</p>
+                </div>
+                <div id="settings" class="content-section" style="display:none;">
+                    <h2>Settings</h2>
+                    <p>Modify your settings here.</p>
+                </div>
+                <div id="reports" class="content-section" style="display:none;">
+                    <h2>Reports</h2>
+                    <p>View reports and analytics here.</p>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to show the content of the selected section
+        function showContent(section) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(sec => sec.style.display = 'none'); // Hide all sections
+            document.getElementById(section).style.display = 'block'; // Show the selected section
+        }
+    </script>
 </body>
 </html>
