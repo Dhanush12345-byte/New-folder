@@ -1,62 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <body>
-    <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Admin Panel</h2>
-            <nav>
-                <ul>
-                    <li><a href="#dashboard" onclick="showContent('dashboard')">Dashboard</a></li>
-                    <li><a href="#users" onclick="showContent('users')">Users</a></li>
-                    <li><a href="#settings" onclick="showContent('settings')">Settings</a></li>
-                    <li><a href="#reports" onclick="showContent('reports')">Reports</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- Main Content Area -->
-        <div class="main-content">
-            <!-- Header -->
-            <header>
-                <h1>Admin Dashboard</h1>
-            </header>
-
-            <!-- Dynamic Content -->
-            <section id="content">
-                <div id="dashboard" class="content-section">
-                    <h2>Welcome to the Dashboard</h2>
-                    <p>This is the main dashboard content.</p>
-                </div>
-                <div id="users" class="content-section" style="display:none;">
-                    <h2>User Management</h2>
-                    <p>Manage your users here.</p>
-                </div>
-                <div id="settings" class="content-section" style="display:none;">
-                    <h2>Settings</h2>
-                    <p>Modify your settings here.</p>
-                </div>
-                <div id="reports" class="content-section" style="display:none;">
-                    <h2>Reports</h2>
-                    <p>View reports and analytics here.</p>
-                </div>
-            </section>
+    <header class="header">
+        <a href="#" class="logo">Amrutha's Portfolio</a>
+        <div class="open"> <i class='bx bx-menu bx-md '></i>
         </div>
-    </div>
+        <nav class="nav">
+            <a href="#" style="--i:1"> Home</a>
+            <a href="#about" style="--i:2"> About</a>
+            <a href="#skills" style="--i:3"> Skills</a>
+            <a href="#projects" style="--i:4"> Projects</a>
+            <a href="#contact" style="--i:5"> Contact Me</a>
+            <div class="close">
+                <i class='bx bx-x bx-md '></i>
 
-    <script>
-        // Function to show the content of the selected section
-        function showContent(section) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(sec => sec.style.display = 'none'); // Hide all sections
-            document.getElementById(section).style.display = 'block'; // Show the selected section
-        }
-    </script>
+            </div>
+        </nav>
+
+
+    </header>
+    <section class="home">
+        <div class="home-section">
+            <h3>Hello, It's Me</h3>
+            <h1>Dhanush Vanam</h1>
+            <h3>And I'm a <span class="text"></span> </h3>
+            <p>I'm passionate web developer, Expertise in creating Website designs having great user experiences and
+                have a strong understanding of usability and accessibility standards.</p>
+            <div class="home-icons-con">
+                <a href="https://github.com/Dhanush12345-byte" target="_blank" style="--i:6"><i
+                        class='bx bxl-github  bx-sm'></i></a>
+                <a href="http://www.linkedin.com/in/dhanush-vanam-65620225a/" target="_blank" style="--i:7"><i
+                        class='bx bxl-linkedin-square  bx-sm'></i></a>
+                <a href="https://www.instagram.com/dhanushvanam/#/" target="_blank" style="--i:8"><i
+                        class='bx bxl-instagram  bx-sm'></i></a>
+
+            </div>
+            <a href="#about" class="home-about-link">More About Me</a>
+
+        </div>
+        <img src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/girl2.png?raw=true" />
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img-lg">
+            <img src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/dev.gif?raw=true" />
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Full Stack Developer</h4>
+            <div class="about-img-sm">
+                <img src="./images/dev.gif" />
+            </div>
+            <p>I am a trained web developer and having a good hands-on-experience on the frontend technologies and also
+                in
+                SQLite and Python. My passion lies in creating captivating designs and implementing them through
+                frontend development.
+                I also practice designing by taking figma designs as reference, and I absolutely love desiging layout in
+                a more attractive and interactive way. Throughout my training, I have developed deep unedrstanding in
+                the frontend technologies like React Js and build the many web DIY apps that helped me in improving my
+                designing and logic building. <br>
+                I also regularly update my work on my GitHub profile for the recruiters reference. And I would like
+                to say that I will use my skills to contribute to the company's success. I am very much confident that
+                my active learning and
+                problem-solving abilities will help me in my job. I am a team player, I always learn from my mistakes
+                and always
+                hunger to learn more everyday.
+            </p>
+        </div>
+
+    </section>
+
+    <h1 class="sub-title">My <span>Skills</span></h2>
+
+        <section class="skills">
+            <div class="container1" id="skills">
+                <h1 class="heading1">Technical Skills</h1>
+                <div class="technical-bars">
+                    <div class="bar">
+                        <i class='bx bxl-html5 bx-md' style="color: orangered"></i>
+                        <div class="info">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-line html">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-css3 bx-md' style="color: skyblue"></i>
+
+                        <div class="info">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-line css">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-javascript bx-md' style="color: yellow"></i>
+
+                        <div class="info">
+                            <span>Javascript</span>
+                        </div>
+                        <div class="progress-line javascript">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-react bx-md' style="color: skyblue"></i>
+
+                        <div class="info">
+                            <span>React</span>
+                        </div>
+                        <div class="progress-line react">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-nodejs bx-md' style="color: green"></i>
+                        <!-- <img style="height: 20px;" src="./images/node.png" /> -->
+
+                        <div class="info">
+                            <span>Node JS</span>
+                        </div>
+                        <div class="progress-line nodejs">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-tailwind-css bx-md' style="color: skyblue"></i>
+                        <div class="info">
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="progress-line tailwind">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <img style="height: 27px; width: 70px;" src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/sqlite.png?raw=true" />
+                        <div class="info">
+                            <span>SQLite</span>
+                        </div>
+                        <div class="progress-line sqlite">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <i class='bx bxl-python bx-md' style="color:purple"></i>
+                        <div class="info">
+                            <span>Python</span>
+                        </div>
+                        <div class="progress-line python">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container1">
+                <h1 class="heading1">Professional Skills</h1>
+                <div class="radial-bars">
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">85%</div>
+                        <div class="text">Creativity</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">75%</div>
+                        <div class="text">Communication</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">70%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Team Work</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-5" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Listening</div>
+                    </div>
+                    <div class="radial-bar">
+                        <svg x='80px' y='80px' viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-6" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">75%</div>
+                        <div class="text">Time Management</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <h2 class="projects-title">My <span>Projects</span></h2>
+        <section id="projects" class="projects">
+            <div class="project">
+                <img src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/youtube-clone.jpg?raw=true" />
+                <div class="project-content">
+                    <h1>Youtube Clone</h1>
+                    <p>This is a fully responsive YouTube clone project created by me with the knowledge that I
+                        have in React Js and other third party packages.
+                        With Like and Dislike video, saved videos and search functionality also with the proper
+                        routing. Kindly login with
+                        the credentials <br>
+                        username : rahul <br>
+                        password : rahul@2021
+                    </p>
+                    <hr />
+                    <p> Technologies Used : HTML, CSS, Javascript, React JS, <br> Node JS</p>
+                    <a href="https://avtube.ccbp.tech/" target="_blank"> Visit Now</a>
+
+                </div>
+
+            </div>
+            <div class="project">
+                <img src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/job-search.jpg?raw=true" />
+                <div class="project-content">
+                    <h1>Jobby App</h1>
+                    <p>This is a fully responsive Job Search App. Implemented perfect filtering functionalities with
+                        respect to the Type of Employment and Salary Range.
+                        Implemented proper routing also failed and loading senarios.
+                        kindly login with
+                        the credentials <br>
+                        username : rahul <br>
+                        password : rahul@2021
+                    </p>
+                    <hr />
+                    <p> Technologies Used : HTML, CSS, Javascript, React JS, <br> Node JS</p>
+                    <a href="https://jobam.ccbp.tech/jobs" target="_blank"> Visit Now</a>
+                </div>
+
+            </div>
+            <div class="project">
+                <img style="padding: 0px;" src="https://github.com/Amrutha-avidi/portfolio/blob/main/images/emoji-game.jpg?raw=true" />
+                <div class="project-content">
+                    <h1>Emoji Game</h1>
+                    <p> This is a simple game for kids to improve their memory power. The 12 random emojies will be
+                        displayed on the screen.
+                        The user should select a non repeated emojie to increase his/her score. If the repeated
+                        emojie is clicked, the score stops and appropriate message will get displayed on the screen.
+                        Attractive interface is designed with attractive
+                        colors and images to attract kids. </p>
+                    <hr />
+                    <p> Technologies Used : HTML, CSS, Javascript, React JS</p>
+                    <a href="https://avidi.ccbp.tech/" target="_blank">Visit Now</a>
+                </div>
+            </div>
+        </section>
+        <p class="git">You can also find other exciting and interactive full stack projects on my <a
+                href="https://github.com/Dhanush12345-byte" target="_blank">GitHub</a> account</p>
+
+
+
+        <section class="contact" id="contact">
+            <div class="contact-text">
+                <h2 class="contact-title">Contact <span>Me</span></h2>
+
+                <h3>Let's Work Together</h3>
+                <p>I think I will be the perfect one that you are searching for this role because of my relevant skills,
+                    experience, and passion for the industry. I'm sure that I can add value to the company growth. My
+                    positive attitude, work ethics, and long-term goals align with the job requirements, making me a
+                    committed and valuable asset to the company. Also I’m a creative and innovative thinker who enjoys
+                    exploring new ideas and finding creative solutions to complex problems.<br><br>
+                    If you like my portfolio and other related work on GitHub, please do revert me back with the details
+                    below.
+                </p>
+                <div class="contact-list">
+                    <li><i class='bx bxl-gmail'></i>vanamdhanushnetha@gmail.com</li>
+                    <li><i class='bx bxs-phone'></i>+91 6303217506</li>
+
+                </div>
+            </div>
+            <div class="contact-form">
+                <form class="form">
+                    <input type="name" placeholder="Enter your name" class="form-name" />
+                    <input type="email" placeholder="Enter your Email" class="form-email" />
+                    <input type="" placeholder="Enter your Subject" class="form-subject" />
+                    <textarea name="" id="" cols="30" rows="10" class="form-message"
+                        placeholder="Enter your Message"></textarea>
+                    <input type="submit" value="Submit" class="send" onClick='message()' />
+
+                </form>
+
+            </div>
+        </section>
+        <div class="last">
+            <p>Developed by Dhanush Vanam © 2024</p>
+        </div>
+        <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+
+
+
+        <script src="index.js" defer></script>
 </body>
+
 </html>
